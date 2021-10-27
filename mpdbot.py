@@ -1,25 +1,23 @@
 # All your imports
-import sys
-import musicpd
-from decouple import config
-from numpy.core.records import recarray
-import twitchio
-from twitchio.ext import commands
-from twitchio.ext import pubsub
-import requests
-import os
-from tinytag import TinyTag
-import random
+import csv
 import json
-from fuzzywuzzy import fuzz
-from fuzzywuzzy import process
+import os
+import random
 import select
 import socket
-import pandas as pd
-from datetime import datetime
+import sys
 import time
-import csv
+from datetime import datetime
 
+import musicpd
+import pandas as pd
+#import requests                            # not used/ package not found
+import twitchio
+from decouple import config
+from fuzzywuzzy import fuzz, process
+from numpy.core.records import recarray     # not used
+from tinytag import TinyTag                 # not used
+from twitchio.ext import commands, pubsub
 
 # Sets up the bot from env
 #bot = commands.Bot(

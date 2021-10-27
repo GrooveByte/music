@@ -1,0 +1,7 @@
+# Prevents commiting the twitch client
+# secret
+.env
+
+# generated with "pipenv install" using
+# the Pipfile packeges declarations
+.venv/*

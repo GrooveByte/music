@@ -1,0 +1,20 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[scripts]
+start = "python mpdbot.py"
+
+[packages]
+twitchio = "*"
+python-musicpd = "*"
+fuzzywuzzy = "*"
+pandas = "*"
+python-decouple = "*"
+tinytag = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.9"
