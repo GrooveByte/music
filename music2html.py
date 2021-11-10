@@ -1,7 +1,8 @@
 import glob
+import time
+
 from tinytag import TinyTag
 import pandas as pd
-import time
 
 #Give path to music folder
 music_path= "C:\\Users\\Parod\\Music\\*\\*.*"
@@ -20,16 +21,17 @@ for track in songs:
     entry = [title, artist, genre, duration]
     songlist.append(entry)
 
-df = pd.DataFrame(songlist, columns =['Title', 'Artist', 'Genre', 'Duration (M:S)'])
-df = df.sort_values(by=['Genre','Title'], kind='stable')
+df = pd.DataFrame(
+    data    = songlist,
+    columns = ['title', 'artist', 'genre', 'duration']
+ )
 
-html = df.to_html(classes='table table-striped', table_id='trackTable', header=True, index=False)
+fmt_json = df.to_json(
+    orient  = "records",
+    indent  = 1
+)
 
-html = df.style.set_properties(**{'font-size': '12pt', 'font-family': 'Calibri','border-bottom': '1px solid #666','border-collapse': 'collapse', 'width': '30%', 'padding': '10px', 'background-color': '#f3f3f3'}).render()
-
-#html = df.to_html(classes='table table-striped', table_id='trackTable', header=True, index=False)
-
-file = open("index.html", "w", encoding="utf-8")
-file.write(html)
+file = open("./docs/assets/json/songlist.json", "w", encoding="utf-8")
+file.write(fmt_json)
 file.close()
 
